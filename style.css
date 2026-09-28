@@ -1,24 +1,30 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 #setSquaresPerRowButton {
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #020970;
-    color: white;
-    border: none;
-    border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #020970;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    width: 960px;
-    height: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  width: 960px;
+  height: 960px;
+  margin: 0 auto;
 }
 
 .square {
-    width: 10px;
-    height: 10px;
-    background-color: lightgray;
+  width: 10px;
+  height: 10px;
+  background-color: lightgray;
 }
