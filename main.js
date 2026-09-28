@@ -6,4 +6,7 @@ for (let i = 0; i < numberOfSquares; i++) {
     const square = document.createElement('div');
     square.classList.add('square');
     container.appendChild(square);
+    square.addEventListener('mouseleave', () => {
+        square.style.backgroundColor = 'yellow';
+    });
 }
