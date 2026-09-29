@@ -24,17 +24,24 @@ function createSquares(numberOfSquaresPerRow) {
     container.appendChild(square);
     square.style.width = `${(container.clientWidth - gapLength) / numberOfSquaresPerRow}px`;
     square.style.height = `${(container.clientHeight - gapLength) / numberOfSquaresPerRow}px`;
-    let alpha = 0.1;
-    square.addEventListener("mouseleave", () => {
-      // Add 0.1 of alpha channel each time until 1 fully opacity.
-      if (alpha < 1) {
-        alpha += 0.1;
-      } else {
-        alpha = 1;
-      }
-
-      const rgba = `rgba(${Math.random() * 255 + 1}, ${Math.random() * 255 + 1}, ${Math.random() * 255 + 1}, ${alpha})`;
-      square.style.backgroundColor = rgba;
-    });
   }
+
+  container.addEventListener("mouseout", (event) => {
+    const square = event.target.closest("div.square");
+
+    if (!square.timesMouseout) {
+      square.timesMouseout = 1;
+    } else {
+      if (square.timesMouseout < 10) {
+        square.timesMouseout += 1;
+      } else {
+        square.timesMouseout = 10;
+      }
+    }
+
+    const alpha = square.timesMouseout / 10;
+
+    const rgba = `rgba(${Math.random() * 255 + 1}, ${Math.random() * 255 + 1}, ${Math.random() * 255 + 1}, ${alpha})`;
+    square.style.backgroundColor = rgba;
+  });
 }
