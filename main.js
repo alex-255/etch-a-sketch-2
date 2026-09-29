@@ -1,5 +1,7 @@
 const container = document.querySelector(".container");
 
+createSquares(16);
+
 const setSquaresPerRowButton = document.getElementById(
   "setSquaresPerRowButton",
 );
